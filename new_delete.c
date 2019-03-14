@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   constructors.c                                     :+:      :+:    :+:   */
+/*   new_delete.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 13:44:32 by marvin            #+#    #+#             */
-/*   Updated: 2019/03/14 13:53:03 by marvin           ###   ########.fr       */
+/*   Updated: 2019/03/14 14:29:15 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,13 @@ doubly_linked_element_container_t *new_doubly_linked_element_container()
 	container->element = NULL;
 	container->next = NULL;
 	container->prev = NULL;
+	return (container);
 }
 
 void delete_doubly_linked_list(doubly_linked_list_t *list,
 			   void del(void *element))
 {
-	doubly_linked_list_t *tmp;
+	doubly_linked_element_container_t *tmp;
 
 	while (list->size)
 	{
