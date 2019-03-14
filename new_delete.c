@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 13:44:32 by marvin            #+#    #+#             */
-/*   Updated: 2019/03/14 13:45:29 by marvin           ###   ########.fr       */
+/*   Updated: 2019/03/14 13:53:03 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ doubly_linked_list_t *new_doubly_linked_list()
 	return (list);
 }
 
-static doubly_linked_element_container_t *new_doubly_linked_element_container()
+doubly_linked_element_container_t *new_doubly_linked_element_container()
 {
 	doubly_linked_element_container_t *container;
 
@@ -33,7 +33,7 @@ static doubly_linked_element_container_t *new_doubly_linked_element_container()
 	container->prev = NULL;
 }
 
-void list_free(doubly_linked_list_t *list,
+void delete_doubly_linked_list(doubly_linked_list_t *list,
 			   void del(void *element))
 {
 	doubly_linked_list_t *tmp;
