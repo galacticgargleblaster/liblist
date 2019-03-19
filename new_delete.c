@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   new_delete.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: student <student@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 13:44:32 by marvin            #+#    #+#             */
-/*   Updated: 2019/03/14 14:29:15 by marvin           ###   ########.fr       */
+/*   Updated: 2019/03/18 17:02:35 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ doubly_linked_list_t *new_doubly_linked_list()
 	return (list);
 }
 
-doubly_linked_element_container_t *new_doubly_linked_element_container()
+element_container_t *new_doubly_linked_element_container()
 {
-	doubly_linked_element_container_t *container;
+	element_container_t *container;
 
-	container = malloc(sizeof(doubly_linked_element_container_t));
+	container = malloc(sizeof(element_container_t));
 	container->element = NULL;
 	container->next = NULL;
 	container->prev = NULL;
@@ -37,7 +37,7 @@ doubly_linked_element_container_t *new_doubly_linked_element_container()
 void delete_doubly_linked_list(doubly_linked_list_t *list,
 			   void del(void *element))
 {
-	doubly_linked_element_container_t *tmp;
+	element_container_t *tmp;
 
 	while (list->size)
 	{
