@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   prepend_append.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: student <student@42.fr>                    +#+  +:+       +#+        */
+/*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 13:46:49 by marvin            #+#    #+#             */
-/*   Updated: 2019/03/18 17:02:36 by student          ###   ########.fr       */
+/*   Updated: 2019/03/20 14:50:05 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "liblist.h"
 
-void					list_prepend(doubly_linked_list_t *list, void *element)
+void					list_prepend(t_doubly_linked_list *list, void *element)
 {
-	element_container_t	*container;
+	t_element_container	*container;
 
 	container = new_doubly_linked_element_container();
 	container->element = element;
@@ -31,9 +31,9 @@ void					list_prepend(doubly_linked_list_t *list, void *element)
 	list->size++;
 }
 
-void					list_append(doubly_linked_list_t *list, void *element)
+void					list_append(t_doubly_linked_list *list, void *element)
 {
-	element_container_t	*container;
+	t_element_container	*container;
 
 	container = new_doubly_linked_element_container();
 	container->element = element;

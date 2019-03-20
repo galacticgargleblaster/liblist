@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   push_pop.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 13:46:49 by marvin            #+#    #+#             */
-/*   Updated: 2019/03/14 14:26:21 by marvin           ###   ########.fr       */
+/*   Updated: 2019/03/20 14:50:04 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "liblist.h"
 
-void					*list_pop_head(doubly_linked_list_t *list)
+void					*list_pop_head(t_doubly_linked_list *list)
 {
 	void	*element;
 
@@ -30,7 +30,7 @@ void					*list_pop_head(doubly_linked_list_t *list)
 	} 
 }
 
-void					*list_pop_tail(doubly_linked_list_t *list)
+void					*list_pop_tail(t_doubly_linked_list *list)
 {
 	void	*element;
 

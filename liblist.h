@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   turns_out_this_does_not_matter.h                   :+:      :+:    :+:   */
+/*   liblist.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: student <student@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1967/08/25 00:00:00 by student           #+#    #+#             */
-/*   Updated: 4242/42/42 66:66:66 by studnet          ###   ########.fr       */
+/*   Updated: 2019/03/20 14:50:08 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 **	An opinionated list implementation, in the questionable code style of
 **	École 42.
 **
-**	      doubly_linked_list_t             element_container_t
+**	      t_doubly_linked_list             t_element_container
 **
 **	+-------------------------+          +-------------+-------+
 **	|                         |          |               next +-----> NULL
@@ -39,28 +39,28 @@
 # define LIBLIST_H
 # include <stdlib.h>
 
-typedef struct					element_container_s
+typedef struct					s_element_container
 {
-	struct element_container_s	*next;
-	struct element_container_s	*prev;
+	struct s_element_container	*next;
+	struct s_element_container	*prev;
 	void						*element;
-}								element_container_t;
+}								t_element_container;
 
-typedef struct					doubly_linked_list_s
+typedef struct					s_doubly_linked_list
 {
-	element_container_t			*head;
-	element_container_t			*tail;
+	t_element_container			*head;
+	t_element_container			*tail;
 	size_t						size;
-}								doubly_linked_list_t;
+}								t_doubly_linked_list;
 
-int								list_is_empty(doubly_linked_list_t *list);
+int								list_is_empty(t_doubly_linked_list *list);
 void							list_prepend(
-	doubly_linked_list_t *list, void *element);
+	t_doubly_linked_list *list, void *element);
 void							list_append(
-	doubly_linked_list_t *list, void *element);
-doubly_linked_list_t			*new_doubly_linked_list();
-element_container_t				*new_doubly_linked_element_container();
+	t_doubly_linked_list *list, void *element);
+t_doubly_linked_list			*new_doubly_linked_list();
+t_element_container				*new_doubly_linked_element_container();
 void							delete_doubly_linked_list(
-	doubly_linked_list_t *list, void del(void *element));
+	t_doubly_linked_list *list, void del(void *element));
 
 #endif

@@ -1,4 +1,4 @@
-      doubly_linked_list_t             doubly_linked_element_container_t
+      t_doubly_linked_list             doubly_linked_t_element_container
                                                                               
 +-------------------------+          +-------------+-------+     
 |                         |          |               next +-----> NULL
