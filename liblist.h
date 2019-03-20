@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   liblist.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
+/*   By: student <student@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1967/08/25 00:00:00 by student           #+#    #+#             */
-/*   Updated: 2019/03/20 14:50:08 by nkirkby          ###   ########.fr       */
+/*   Updated: 2019/03/20 16:24:59 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,6 @@ void							list_append(
 t_doubly_linked_list			*new_doubly_linked_list();
 t_element_container				*new_doubly_linked_element_container();
 void							delete_doubly_linked_list(
-	t_doubly_linked_list *list, void del(void *element));
+	t_doubly_linked_list *list, void delete_element(void *element));
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   new_delete.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
+/*   By: student <student@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 13:44:32 by marvin            #+#    #+#             */
-/*   Updated: 2019/03/20 14:50:06 by nkirkby          ###   ########.fr       */
+/*   Updated: 2019/03/20 16:25:42 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ t_element_container *new_doubly_linked_element_container()
 }
 
 void delete_doubly_linked_list(t_doubly_linked_list *list,
-			   void del(void *element))
+				void delete_element(void *element))
 {
 	t_element_container *tmp;
 
 	while (list->size)
 	{
-		del(list->tail->element);
+		delete_element(list->tail->element);
 		tmp = list->tail;
 		list->tail = list->tail->prev;
 		free(tmp);
