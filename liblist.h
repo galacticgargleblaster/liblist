@@ -6,7 +6,7 @@
 /*   By: student <student@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1967/08/25 00:00:00 by student           #+#    #+#             */
-/*   Updated: 2019/03/23 22:10:00 by student          ###   ########.fr       */
+/*   Updated: 2019/03/25 12:42:29 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,9 @@ void							delete_doubly_linked_list(
 	t_doubly_linked_list *list, void delete_element(void *element));
 void							*list_pop_head(t_doubly_linked_list *list);
 void							*list_pop_tail(t_doubly_linked_list *list);
-
+void							*list_pop_index(t_doubly_linked_list *list,
+												size_t idx);
+void							*list_get_index(t_doubly_linked_list *list,
+												size_t idx);
 
 #endif

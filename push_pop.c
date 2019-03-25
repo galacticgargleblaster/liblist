@@ -6,7 +6,7 @@
 /*   By: student <student@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 13:46:49 by marvin            #+#    #+#             */
-/*   Updated: 2019/03/23 22:51:54 by student          ###   ########.fr       */
+/*   Updated: 2019/03/25 12:25:26 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,4 +104,26 @@ void					*list_pop_tail(t_doubly_linked_list *list)
 		list->size--;
 		return (element);
 	} 
+}
+
+void					*list_pop_index(t_doubly_linked_list *list, size_t idx)
+{
+	void				*element;
+	t_element_container	*tmp;
+
+	if (list_is_empty(list) || idx > list->size - 1)
+		return (NULL);
+	else if (idx == 0)
+		return list_pop_tail(list);
+	else if (idx == list->size)
+		return list_pop_head(list);
+	tmp = list->tail->element;
+	while (idx--)
+		tmp = tmp->next;
+	element = tmp->element;
+	tmp->next->prev = tmp->prev;
+	tmp->prev->next = tmp->next;
+	list->size--;
+	free(tmp);
+	return (element);
 }
