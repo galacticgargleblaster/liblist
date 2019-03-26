@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get.c                                              :+:      :+:    :+:   */
+/*   copy.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: student <student@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 13:46:49 by marvin            #+#    #+#             */
-/*   Updated: 2019/03/25 19:23:13 by student          ###   ########.fr       */
+/*   Updated: 2019/03/25 20:20:14 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,22 @@
 
 /*
 **===========================================================================**
-**	returns element at index "idx" with respect to the tail of the list
+**	returns a shallow copy
 **===========================================================================**
 */
 
-void					*list_get_index(t_doubly_linked_list *list, size_t idx)
+t_doubly_linked_list	*list_copy(const t_doubly_linked_list *list)
 {
-	t_element_container	*tmp;
+	t_doubly_linked_list	*new_list;
+	t_element_container		*tmp;
 
-	if (list_is_empty(list) || idx > list->size - 1)
-		return (NULL);
+	new_list = new_doubly_linked_list();
 	tmp = list->tail;
-	while (idx)
-	{
-		tmp = tmp->next;
-		idx--;
-	}
-	return (tmp->element);
-}
 
-void					*list_get_head(t_doubly_linked_list *list)
-{
-	if (list->head)
-		return (list->head->element);
-	else
-		return (NULL);
+	while (tmp)
+	{
+		list_push_tail(new_list, tmp->element);
+		tmp = tmp->next;
+	}
+	return (new_list);
 }

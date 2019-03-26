@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get.c                                              :+:      :+:    :+:   */
+/*   cat_split.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: student <student@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 13:46:49 by marvin            #+#    #+#             */
-/*   Updated: 2019/03/25 19:23:13 by student          ###   ########.fr       */
+/*   Updated: 2019/03/25 17:45:17 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,20 @@
 
 /*
 **===========================================================================**
-**	returns element at index "idx" with respect to the tail of the list
+**	concatenates b's contents to the tail end of a, then frees b
 **===========================================================================**
 */
 
-void					*list_get_index(t_doubly_linked_list *list, size_t idx)
+t_doubly_linked_list	*list_cat(t_doubly_linked_list *a,
+									t_doubly_linked_list *b)
 {
-	t_element_container	*tmp;
-
-	if (list_is_empty(list) || idx > list->size - 1)
-		return (NULL);
-	tmp = list->tail;
-	while (idx)
+	if (a->size && b->size)
 	{
-		tmp = tmp->next;
-		idx--;
+		a->tail->prev = b->head;
+		b->head->next = a->tail;
+		a->tail = b->tail;
+		a->size += b->size;
+		free (b);
 	}
-	return (tmp->element);
-}
-
-void					*list_get_head(t_doubly_linked_list *list)
-{
-	if (list->head)
-		return (list->head->element);
-	else
-		return (NULL);
+	return (a);
 }
