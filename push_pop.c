@@ -6,13 +6,14 @@
 /*   By: student <student@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 13:46:49 by marvin            #+#    #+#             */
-/*   Updated: 2019/03/25 12:25:26 by student          ###   ########.fr       */
+/*   Updated: 2019/03/30 14:32:36 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "liblist.h"
 
-void					list_push_head(t_doubly_linked_list *list, void *element)
+void					list_push_head(t_doubly_linked_list *list,
+										void *element)
 {
 	t_element_container	*container;
 
@@ -28,11 +29,12 @@ void					list_push_head(t_doubly_linked_list *list, void *element)
 		list->head->next = container;
 		container->prev = list->head;
 		list->head = list->head->next;
-	} 
+	}
 	list->size++;
 }
 
-void					list_push_tail(t_doubly_linked_list *list, void *element)
+void					list_push_tail(t_doubly_linked_list *list,
+										void *element)
 {
 	t_element_container	*container;
 
@@ -42,13 +44,13 @@ void					list_push_tail(t_doubly_linked_list *list, void *element)
 	{
 		list->tail = container;
 		list->head = container;
-	} 
+	}
 	else
 	{
 		list->tail->prev = container;
 		container->next = list->tail;
 		list->tail = list->tail->prev;
-	} 
+	}
 	list->size++;
 }
 
@@ -76,7 +78,7 @@ void					*list_pop_head(t_doubly_linked_list *list)
 		}
 		list->size--;
 		return (element);
-	} 
+	}
 }
 
 void					*list_pop_tail(t_doubly_linked_list *list)
@@ -103,7 +105,7 @@ void					*list_pop_tail(t_doubly_linked_list *list)
 		}
 		list->size--;
 		return (element);
-	} 
+	}
 }
 
 void					*list_pop_index(t_doubly_linked_list *list, size_t idx)
@@ -114,9 +116,9 @@ void					*list_pop_index(t_doubly_linked_list *list, size_t idx)
 	if (list_is_empty(list) || idx > list->size - 1)
 		return (NULL);
 	else if (idx == 0)
-		return list_pop_tail(list);
+		return (list_pop_tail(list));
 	else if (idx == list->size)
-		return list_pop_head(list);
+		return (list_pop_head(list));
 	tmp = list->tail->element;
 	while (idx--)
 		tmp = tmp->next;

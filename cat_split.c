@@ -6,7 +6,7 @@
 /*   By: student <student@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 13:46:49 by marvin            #+#    #+#             */
-/*   Updated: 2019/03/25 17:45:17 by student          ###   ########.fr       */
+/*   Updated: 2019/03/30 14:34:13 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_doubly_linked_list	*list_cat(t_doubly_linked_list *a,
 		b->head->next = a->tail;
 		a->tail = b->tail;
 		a->size += b->size;
-		free (b);
+		free(b);
 	}
 	return (a);
 }

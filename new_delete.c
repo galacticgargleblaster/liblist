@@ -6,13 +6,13 @@
 /*   By: student <student@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 13:44:32 by marvin            #+#    #+#             */
-/*   Updated: 2019/03/30 02:50:36 by student          ###   ########.fr       */
+/*   Updated: 2019/03/30 14:33:48 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "liblist.h"
 
-t_doubly_linked_list *new_doubly_linked_list()
+t_doubly_linked_list	*new_doubly_linked_list(void)
 {
 	t_doubly_linked_list *list;
 
@@ -23,7 +23,7 @@ t_doubly_linked_list *new_doubly_linked_list()
 	return (list);
 }
 
-t_element_container *new_doubly_linked_element_container()
+t_element_container		*new_doubly_linked_element_container(void)
 {
 	t_element_container *container;
 
@@ -34,8 +34,8 @@ t_element_container *new_doubly_linked_element_container()
 	return (container);
 }
 
-void delete_doubly_linked_list(t_doubly_linked_list *list,
-				void delete_element(void *element))
+void					delete_doubly_linked_list(t_doubly_linked_list *list,
+											void delete_element(void *element))
 {
 	t_element_container *tmp;
 
