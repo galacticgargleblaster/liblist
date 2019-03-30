@@ -6,7 +6,7 @@
 /*   By: student <student@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 13:46:49 by marvin            #+#    #+#             */
-/*   Updated: 2019/03/25 20:20:14 by student          ###   ########.fr       */
+/*   Updated: 2019/03/30 02:24:04 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_doubly_linked_list	*list_copy(const t_doubly_linked_list *list)
 
 	while (tmp)
 	{
-		list_push_tail(new_list, tmp->element);
+		list_push_head(new_list, tmp->element);
 		tmp = tmp->next;
 	}
 	return (new_list);
