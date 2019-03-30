@@ -6,7 +6,7 @@
 /*   By: student <student@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1967/08/25 00:00:00 by student           #+#    #+#             */
-/*   Updated: 2019/03/25 19:23:30 by student          ###   ########.fr       */
+/*   Updated: 2019/03/30 02:32:17 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ void							*list_get_index(t_doubly_linked_list *list,
 t_doubly_linked_list			*list_cat(t_doubly_linked_list *a,
 											t_doubly_linked_list *b);
 t_doubly_linked_list			*list_copy(const t_doubly_linked_list *list);
+t_doubly_linked_list			*list_deepcopy(const t_doubly_linked_list *list,
+								void *copy_element(void *));
 void							*list_get_head(t_doubly_linked_list *list);
 
 #endif

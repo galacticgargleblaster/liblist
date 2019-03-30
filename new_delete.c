@@ -6,7 +6,7 @@
 /*   By: student <student@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 13:44:32 by marvin            #+#    #+#             */
-/*   Updated: 2019/03/20 16:25:42 by student          ###   ########.fr       */
+/*   Updated: 2019/03/30 02:50:36 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,10 @@ void delete_doubly_linked_list(t_doubly_linked_list *list,
 
 	while (list->size)
 	{
-		delete_element(list->tail->element);
+		if (delete_element)
+			delete_element(list->tail->element);
 		tmp = list->tail;
-		list->tail = list->tail->prev;
+		list->tail = list->tail->next;
 		free(tmp);
 		list->size--;
 	}
