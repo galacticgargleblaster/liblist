@@ -6,7 +6,7 @@
 /*   By: student <student@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1967/08/25 00:00:00 by student           #+#    #+#             */
-/*   Updated: 2019/03/30 02:32:17 by student          ###   ########.fr       */
+/*   Updated: 2019/05/11 15:48:35 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,10 @@ typedef struct					s_doubly_linked_list
 */
 
 int								list_is_empty(t_doubly_linked_list *list);
-void							list_push_head(
-	t_doubly_linked_list *list, void *element);
-void							list_push_tail(
-	t_doubly_linked_list *list, void *element);
+void							list_push_head(t_doubly_linked_list *list,
+												void *element);
+void							list_push_tail(t_doubly_linked_list *list,
+												void *element);
 t_doubly_linked_list			*new_doubly_linked_list();
 t_element_container				*new_doubly_linked_element_container();
 void							delete_doubly_linked_list(
